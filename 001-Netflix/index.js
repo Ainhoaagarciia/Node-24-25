@@ -5,6 +5,8 @@ const { Pool } = require("pg");      // HABLAR BD PG DE AWS
 // INSTANCIAR LOS OBJETOS QUE NECESITAMOS
 const app = express();
 const port = 3000;
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 
 // Configuración de la base de datos
@@ -37,21 +39,37 @@ const pool = new Pool({
         );
         res.json(rows);
     });
+    //Buscar una película por su genero
+    app.get("/peliculas", async (req, res) => {
+        const { genero } = req.query;  // Obtenemos el género de la query string
+        let query = "SELECT * FROM peliculas";  // Consulta base
+        let params = [];
+      
+        if (genero) {
+          query += " WHERE genero = $1";  // Si se pasa un género, filtramos por él
+          params.push(genero);
+        }
+      
+        
+          const { rows } = await pool.query(query, params);
+          res.json(rows);
+        
+    });
     
     app.post("/peliculas", async (req, res)=>{
-        const {id, titulo, director, anio } = req.body;
+        const {id, titulo, director, anio, genero } = req.body;
         const {rows} = await pool.query(
-            "INSERT INTO PELICULAS (id, titulo, director, anio) VALUES ($1, $2, $3, $4) RETURNING *",
-            [id, titulo, director , anio]
+            "INSERT INTO PELICULAS (id, titulo, director, anio, genero) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [id, titulo, director , anio , genero]
         );
         res.json(rows);
         // res.send("Bienvenido a mi API DISNEY");
     });
     app.put("/peliculas", async (req, res)=>{
-        const {id, titulo, director, anio } = req.body;
+        const {id, titulo, director, anio, genero } = req.body;
         const {rows} = await pool.query(
-            "UPDATE peliculas SET titulo = $2, director = $3, anio = $4 WHERE id = $1 RETURNING *",
-            [id, titulo, director , anio]
+            "UPDATE peliculas SET titulo = $2, director = $3, anio = $4, genero = $5 WHERE id = $1 RETURNING *",
+            [id, titulo, director , anio, genero]
         );
         res.json(rows);
         // res.send("Bienvenido a mi API DISNEY");
