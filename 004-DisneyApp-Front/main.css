@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    background-color: #26263b;
+    background-color: #1c1c2c;
     color: #333;
     font-size: 14px;
     line-height: 1.5;
@@ -34,24 +34,28 @@ main {
 header {
     display: flex;
     align-items: center;
-    justify-content: left; /* Centra todo el contenido dentro del header */
+    justify-content: flex-start; /* Centra todo el contenido dentro del header */
     padding: 30px 0px;  /* Márgenes laterales estándar */
     background-color: #1d1d2c;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     width: 100%;
+    
 }
 header .logo {
     margin-right: 60px; /* Espacio entre el logo y el menú */
     width: 40px; /* Ajusta a 40px para hacerlo más pequeño */
     height: auto; /* Mantiene las proporciones de la imagen */
+    position: relative;
+    vertical-align: middle;
 }
 
 header img {
     width: 100%; /* La imagen será flexible */
-    max-width: 150px; /* Limitar el tamaño máximo del logo más pequeño */
+    max-width: 160px; /* Limitar el tamaño máximo del logo más pequeño */
     height: auto;
     margin-left: 100px;
     margin-right: 60px;
+    position: relative;
 }
 
 
@@ -91,7 +95,7 @@ header img {
 }
 
 #menu ul li a:hover {
-    color: #d12a2a;
+    color: #99e9ffe2;
 }
 
 
@@ -105,30 +109,170 @@ header img {
 
 #extras input,
 #extras button {
-    padding: 8px 28px;
-    font-size: 0.95rem;
+    padding: 8px 10px;
+    font-size: 0.91rem;
     border-radius: 4px;
     border: 1px solid #ccc;
     outline: none;
 }
 
 #extras button {
-    background-color: #950101;
+    background-color: #6ad0ed8e;
     color: #fff;
+    font-style: bold;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+
 #extras button:hover {
-    background-color: #790000;
+    background-color: #319bb88e;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #foto-usuario {
-    width: 60px; /* Ajusta el tamaño deseado */
+    width: 65px; /* Ajusta el tamaño deseado */
     height: auto; /* Mantiene las proporciones de la imagen */
+    margin-left: 60px;
 }
 
+/*Galeria Imagenes*/
+
+#carrusel-caja {
+    -moz-animation: automatizacion 25s infinite linear;
+    -o-animation: automatizacion 25s infinite linear;
+    -webkit-animation: automatizacion 25s infinite linear;
+    animation: automatizacion 25s infinite linear;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    height: auto;
+    width: 500%;
+    margin: 0 auto;
+    margin-top: 0px;
+    overflow: hidden;
+}
+#carrusel-contenido {
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 45px;
+    border-top: 8px solid #14141f; /* Borde sólido alrededor */
+    border-bottom: 8px solid #14141f; /* Borde sólido alrededor */
+    border-right: 8px solid #14141f; /* Borde sólido alrededor */
+    border-left: 8px solid #14141f; /* Borde sólido alrededor */
+    border-top-right-radius: 8px solid #14141f; /* Borde sólido alrededor */
+    border-top-left-radius: 8px solid #14141f; /* Borde sólido alrededor */
+    border-bottom-right-radius: 8px solid #14141f; /* Borde sốlido alrededor */
+    border-bottom-left-radius: 8px solid #14141f; /* Borde más pequeño alrededor */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Sombra para resaltar */
+    border-radius: 30px;
+}
+
+.imagenes {
+    height: 600px;
+    width: 100%;
+    object-fit: cover; /* Asegura que las imágenes se ajusten bien al contenedor */
+    display: block;
+    overflow: hidden;
+    
+}
+
+.carrusel-elemento {
+    
+    width: 20%;
+    float: left;
+}
+
+@-moz-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    90% {
+        margin-left: -300%;
+    }
+    95% {
+        margin-left: -400%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@-webkit-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    90% {
+        margin-left: -300%;
+    }
+    95% {
+        margin-left: -400%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@keyframes automatizacion {
+    0% { margin-left: 0; }
+    18% { margin-left: 0; }
+    
+    22% { margin-left: -100%; }
+    40% { margin-left: -100%; }
+
+    44% { margin-left: -200%; }
+    62% { margin-left: -200%; }
+
+    66% { margin-left: -300%; }
+    84% { margin-left: -300%; }
+
+    88% { margin-left: -400%; }
+    95% { margin-left: -400%; } /* Mantiene la última imagen unos segundos */
+    
+    100% { margin-left: 0; } /* Regresa suavemente a la primera */
+}
 
 /* Filtros de género y botones de acceso rápido */
 #filtros2 {
@@ -137,6 +281,7 @@ header img {
     gap: 10px;
     margin-left: 20px;
     margin-bottom: 40px;
+    margin-top: 0px;
 }
 
 #filtros2 label {
@@ -154,7 +299,7 @@ header img {
     outline: none; /* Elimina el contorno azul al hacer clic en el select */
     margin-right: 17px;
     background-color: #f4f4f4;
-    color: #790000;
+    color: #125062;
     cursor: pointer;
 }
 #filtros2 option {
@@ -169,7 +314,7 @@ header img {
     margin-left: 0px;
 }
 #accesos-rapidos button {
-    background-color: #950101;
+    background-color: #6ad0ed8e;
     color: #fff;
     border: none;
     font-size: 1rem;
@@ -180,7 +325,7 @@ header img {
 }
 
 #accesos-rapidos button:hover {
-    background-color: #790000;
+    background-color: #319bb88e;
 }
 
 
@@ -201,9 +346,10 @@ ul#peliculas {
 
 ul#peliculas li {
     text-align: center;
+    text-align: justify;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #26263b;
+    background-color: #1c1c2c;
     transition: transform 0.4s ease, box-shadow 0.3s ease;
     margin: 0; /* Eliminamos márgenes adicionales */
 }
@@ -250,177 +396,12 @@ ul#peliculas li:hover {
 /* Message when no movies found */
 #mensaje-estado {
     text-align: center;
-    color: #e74c3c;
+    color: #1d1d2c;
     font-size: 1rem;
     font-weight: bold;
     display: none;
 }
-#proximamente h2 {
-    font-size: 3.5rem;
-    font-family: Alhadara;
-    color: #fff;
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra: desplazamiento x, desplazamiento y, difuso, color */
-    transition: transform 0.3s ease;
-    
-}
-/* Estilo para la sección de trailer */
-#seccion-trailer {
-    width: calc(100% + 80px); /* Compensa el padding del main */
-    max-width: none; /* Anula cualquier restricción de ancho */
-    text-align: center;
-    margin-left: -40px; /* Desplaza el contenedor a la izquierda */
-    margin-right: -40px; /* Desplaza el contenedor a la derecha */
-    padding: 55px;
-    border: 2px solid #1c1c2c;
-    border-radius: 0px;
-    background-color: #1d1d2c;
-    overflow: hidden;
-    margin-top: 50px;
-}
 
-
-
-/* Contenedor para los trailers */
-#trailers-contenedor {
-    display: flex;
-    justify-content: center;
-    gap: 20px;  /* Espacio entre los trailers */
-    flex-wrap: wrap;  /* Permite que los trailers se ajusten cuando la pantalla sea más pequeña */
-    margin: 0 auto;
-    margin-bottom: 15px;
-    padding: 0 80px;
-}
-
-/* Ajuste global para mantener proporción en todos los tamaños */
-/* Contenedor responsivo para videos */
-/* Contenedor para cada tráiler */
-.trailer {
-    width: 100%;
-    max-width: 560px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-}
-
-/* Ajustes para el video */
-.trailer video {
-    width: 100%;
-    max-width: 560px;
-    border: 5px solid #14141f;
-    border-radius: 10px;
-}
-
-/* Estilos del cuadro de información */
-.trailer-info {
-    background-color: #24243a;
-    border: 2px solid #3a3a5e;
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 560px;
-    color: #ffffff;
-    text-align: left;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.trailer-info:hover {
-    transform: translateY(5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Título de la película */
-.trailer-info h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-    text-align: center;
-    color: #ffffff;
-}
-
-/* Ajuste de texto en la info */
-.trailer-info p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-/* Estilos del apartado de reseñas */
-#reseñas {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #26263b;
-    border-radius: 8px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-#reseñas h2 {
-    font-size: 3rem;
-    font-family: Alhadara;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 50px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra: desplazamiento x, desplazamiento y, difuso, color */
-    transition: transform 0.3s ease;
-    
-}
-h2:hover {
-    transform: translateY(-5px); /* Eleva el título cuando se pasa el cursor */
-}
-
-/* Contenedor con diseño de 2 columnas */
-.contenedor-reseñas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 0 50px;
-    box-sizing: border-box;
-}
-
-.reseña {
-    display: flex;
-    align-items: flex-start;
-    background-color: #eee;
-    padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.reseña:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.reseña img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.info-reseña h3 {
-    font-size: 1.2rem;
-    color: #790000;
-    margin-bottom: 8px;
-}
-
-.info-reseña p {
-    font-size: 1rem;
-    color: #1d1d2c;
-    margin-bottom: 10px;
-}
-
-.calificacion {
-    font-size: 1.2rem;
-    color: #f39c12;
-}
 
 /* Media queries para adaptabilidad */
 @media (min-width: 1700px) {
@@ -574,6 +555,10 @@ h2:hover {
     header .logo {
         height: 200px; /* Hacer el logo aún más pequeño en pantallas muy pequeñas */
     }
+    .imagenes{
+        height: 300px;
+        width: 100%;
+    }
     /* Ajuste específico para centrar #filtros */
     #filtros {
         flex-direction: column; /* Cambiamos el layout a columna */
@@ -628,6 +613,10 @@ h2:hover {
 
     header .logo {
         height: 200px; /* Hacer el logo aún más pequeño en pantallas muy pequeñas */
+    }
+    .imagenes{
+        height: 200px;
+        width: 100%;
     }
     
     /* Ajuste específico para centrar #filtros */
@@ -707,6 +696,11 @@ h2:hover {
     header .logo {
         height: 200px; /* Hacer el logo aún más pequeño en pantallas muy pequeñas */
     }
+
+    .imagenes{
+        height: 200px;
+        width: 100%;
+    }
     /* Ajuste específico para centrar #filtros */
     #filtros {
         flex-direction: column; /* Cambiamos el layout a columna */
@@ -771,7 +765,13 @@ h2:hover {
         font-size: 14px;
     }
 }
-@media (max-width: 1300px) {
+@media (max-width: 200px) {
+    .imagenes{
+        height: 200px;
+        width: 100%;
+    }
+}
+@media (max-width: 1399px) {
     #foto-usuario {
         display: none; /* Oculta la imagen cuando el ancho de la pantalla sea menor a 800px */
     }

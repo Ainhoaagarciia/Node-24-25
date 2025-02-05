@@ -10,7 +10,7 @@
 <body>
     <header>
         <a href="#filtros2"> <!-- Este enlace llevará al inicio de la página -->
-            <img src="./imagenes/logo_disney+.png"  alt="logo"> 
+            <img src="./imagenes/disney-plus-logo.png"  alt="logo"> 
         </a>
         <section id="filtros">
             <!-- Menú al lado de la imagen -->
@@ -18,6 +18,7 @@
                 <ul>
                     <li><a href="#filtros2">Inicio</a></li>
                     <li><a href="#seccion-trailer">Próximamente</a></li>
+                    <li><a href="#seccion-trailer">Estrenos</a></li>
                 </ul>
             </nav>
             <!-- Búsqueda y Ordenación -->
@@ -26,11 +27,32 @@
                 <button id="buscar-button">Buscar</button>
                 <button id="ordenar-ascendente">Ordenar por Año ↓</button>
                 <button id="ordenar-descendente">Ordenar por Año ↑</button>
-                <img src="./imagenes/foto_usuario.png" id="foto-usuario" alt="usuario">
+                <img src="https://archive.org/download/49_20210404/122.png" id="foto-usuario" alt="usuario">
             </div>
         </section>
     </header>
     <main>
+        <!-- Gallery de imágenes con transición -->
+        <div id="carrusel-contenido">
+            <div id="carrusel-caja">
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="https://estadodeltiempo.mx/wp-content/uploads/2022/01/Spider-Man-No-Way-Home-la-mas-taquillera-en-Mexico.jpg">
+                </div>
+                <div class="carrusel-elemento">
+                    <img class="imagenes" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/AC4EF589A48EC49C08087D28E2DF30C18197F80C2B94AF10493A83F69465590A/scale?width=1200&aspectRatio=1.78&format=webp" > 
+                </div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="./imagenes/blancanieves.jpg">               
+                </div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="https://static.posters.cz/image/hp/75998.jpg">     
+                </div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="https://cinefilosoficial.com/wp-content/uploads/2019/04/portada-8.jpg">                   
+                </div>
+                
+            </div>
+        </div>
         <section id="filtros2">
             <!-- Filtrar por Género -->
             <label for="genero">Filtrar Por Género:</label> <!---Etiqueta-->
