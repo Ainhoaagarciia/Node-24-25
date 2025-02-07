@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Disney+</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <header>
+        <a href="#filtros2"> <!-- Este enlace llevará al inicio de la página -->
+            <img src="./imagenes/logo_disney+.png"  alt="logo"> 
+        </a>
+        <section id="filtros">
+            <!-- Menú al lado de la imagen -->
+            <nav id="menu">
+                <ul>
+                    <li><a href="#filtros2">Inicio</a></li>
+                    <li><a href="#seccion-trailer">Próximamente</a></li>
+                </ul>
+            </nav>
+            <!-- Búsqueda y Ordenación -->
+            <div id="extras">
+                <input type="text" id="buscar" placeholder="Buscar por título..."/> <!---Barra de Busqueda-->
+                <button id="buscar-button">Buscar</button>
+                <button id="ordenar-ascendente">Ordenar por Año ↓</button>
+                <button id="ordenar-descendente">Ordenar por Año ↑</button>
+                <img src="./imagenes/foto_usuario.png" id="foto-usuario" alt="usuario">
+            </div>
+        </section>
+    </header>
+    <main>
+        <section id="filtros2">
+            <!-- Filtrar por Género -->
+            <label for="genero">Filtrar Por Género:</label> <!---Etiqueta-->
+            <select id="genero">
+                <option value="todos">Todos</option> <!---Desplegable de Opciones, por defecto Todos, los adicionales se cargarán dinámicamente desde JSON-->
+            </select>
+            <!-- Botones de accesos rápidos -->
+            <div id="accesos-rapidos"></div> <!---Se cargarán dinámicamente botones para filtrar por genero desde JSON (Animacion,Accion...)-->
+        </section>
+        
+        <!-- Listado de Películas -->
+        <section id="listado-peliculas">
+            <ul id="peliculas"></ul>  <!-- Aquí se listarán las películas desde JSON-->
+        </section>
+        <!-- Mensaje cuando no se encuentran películas -->
+
+        <p id="mensaje-estado" style="display: none;">No se encontraron películas con los criterios seleccionados.</p>
+        
+    </main>
+    <script src='main.js'></script>
+</body>
+</html>
