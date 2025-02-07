@@ -126,17 +126,7 @@ buscarBtn.addEventListener("click", buscarPorTitulo);
 ordenarAscBtn.addEventListener("click", () => ordenarPeliculas(true));
 ordenarDescBtn.addEventListener("click", () => ordenarPeliculas(false));
 
-// Verificar si hay usuario autenticado
-document.addEventListener("DOMContentLoaded", function() {
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    if (!usuario) {
-        // Si no hay usuario, redirigir al login
-        window.location.href = "https://ainhoaagarciia.github.io/Node-24-25/004-DisneyApp-Login/login.html";
-    } else {
-        console.log("Usuario autenticado:", JSON.parse(usuario));
-    }
-});
 
 // Inicializar la aplicación
 inicializar();
