@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Disney+</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#filtros2"> <!-- Este enlace llevará al inicio de la página -->
+            <img src="./img/disney-plus-logo.png" alt="logo"> 
+        </a>
+        <section id="filtros">
+            
+            <!-- Búsqueda y Ordenación -->
+            <div id="extras">
+                <input type="text" id="buscar" placeholder="Buscar por título..."/> <!---Barra de Busqueda-->
+                <button id="buscar-button">Buscar</button>
+                <!-- Añadir un botón para filtrar favoritos -->
+                <button id="filtrar-favoritos">Favoritos</button>
+
+                <button id="ordenar-ascendente">Ordenar por Año ↓</button>
+                <button id="ordenar-descendente">Ordenar por Año ↑</button>
+                <a href="#seccion-trailer">
+                    <button>Trailers</button>
+                  </a>
+                <div id="volverLogin">
+                    <button type="click"><img src="https://archive.org/download/49_20210404/122.png" id="foto-usuario" alt="usuario"></button>
+                </div>
+                
+            </div>
+        </section>
+    </header>
+    <main>
+        <!-- Gallery de imágenes con transición -->
+        <div id="carrusel-contenido">
+            <div id="carrusel-caja">
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="https://estadodeltiempo.mx/wp-content/uploads/2022/01/Spider-Man-No-Way-Home-la-mas-taquillera-en-Mexico.jpg">
+                </div>
+                <div class="carrusel-elemento">
+                    <img class="imagenes" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/AC4EF589A48EC49C08087D28E2DF30C18197F80C2B94AF10493A83F69465590A/scale?width=1200&aspectRatio=1.78&format=webp" > 
+                </div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="img/blancanieves.jpg"></div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="https://static.posters.cz/image/hp/75998.jpg">     
+                </div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="https://cinefilosoficial.com/wp-content/uploads/2019/04/portada-8.jpg">
+                </div>
+            </div>
+        </div>
+
+        <section id="filtros2">
+            <!-- Filtrar por Género -->
+            <label for="genero">Filtrar Por Género:</label> <!---Etiqueta-->
+            <select id="genero">
+                <option value="todos">Todos</option> <!---Desplegable de Opciones, por defecto Todos, los adicionales se cargarán dinámicamente desde JSON-->
+            </select>
+            <!-- Botones de accesos rápidos -->
+            <div id="accesos-rapidos"></div> <!---Se cargarán dinámicamente botones para filtrar por genero desde JSON (Animacion,Accion...)-->
+        </section>
+
+        <div id="contenedorMensaje" class="mensaje-vacio">
+            <!-- El mensaje vacío se inyectará aquí -->
+        </div>
+        
+        <!-- Listado de Películas -->
+        <section id="listado-peliculas">
+            <ul id="peliculas"></ul>  <!-- Aquí se listarán las películas desde JSON-->
+        </section>
+
+        <!-- Mensaje cuando no se encuentran películas -->
+        <p id="mensaje-estado" style="display: none;">No se encontraron películas con los criterios seleccionados.</p>
+
+        <section id="seccion-trailer">
+            <div id="trailer-container">
+                
+                    <h2 id="movie-title">Selecciona una película</h2>
+                    <p><strong>Año:</strong> <span id="movie-year">--</span></p>
+                    <p><strong>Género:</strong> <span id="movie-genre">--</span></p>
+                    <p><strong>Descripción:</strong> <span id="movie-synopsis">--</span></p>
+                
+        
+                <div class="trailer-right">
+                    <iframe id="trailer-video" width="100%" height=auto frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src='main.js'></script>
+</body>
+</html>
