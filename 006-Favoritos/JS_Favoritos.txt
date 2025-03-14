@@ -1,0 +1,57 @@
+// 🔹 Simulación de datos obtenidos desde la API
+
+const peliculas = [
+
+    { id: 1, titulo: "Inception" },
+
+    { id: 2, titulo: "Interstellar" },
+
+    { id: 3, titulo: "The Matrix" },
+
+    { id: 4, titulo: "Pulp Fiction" },
+
+    { id: 5, titulo: "The Godfather" }
+
+];
+
+​
+
+// 🔹 Simulación de películas favoritas obtenidas de la API del usuario
+
+const favoritosUsuario = [
+
+    { id: 2, titulo: "Interstellar" },
+
+    { id: 4, titulo: "Pulp Fiction" }
+
+];
+
+​
+
+async function loadFavoritos() {
+
+    const responseFavoritos = await fetch(`http://localhost:3000/api/favoritos/${userId}`);
+
+    const favoritos = await responseFavoritos.json();
+
+    peliculas.forEach((pelicula) => {
+
+        const esFavorita = favoritosUsuario.some(fav => fav.id === pelicula.id);
+
+        //const esFavorita = favoritos.some(fav => fav.id === pelicula.id);
+
+        if (esFavorita) {
+
+            console.log(`🎬 "${pelicula.titulo}" está en favoritos ❤️`);
+
+        } else {
+
+            console.log(`📽️ "${pelicula.titulo}" no es favorita`);
+
+        }
+
+    });
+
+    
+
+}
