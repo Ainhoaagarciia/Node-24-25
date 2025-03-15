@@ -1,13 +1,11 @@
 const listadoPeliculas = document.getElementById('peliculas');
 
 function inicializar(){
-    fetch('http://localhost:3002/peliculas')
-    .then(response => {
-        if(!response.ok) throw new Error("Error al mostrar las peliculas");
-        return response.json();
-    })
+    fetch('http://localhost:3000/peliculas')
+    .then(response => response.json())
     .then(data => {
-        mostrarPeliculas(data);
+        peliculas = data;
+        mostrarPeliculas(peliculas);
     })
     .catch(error => { console.log("Error al cargar las peliculas", error)});
 }
