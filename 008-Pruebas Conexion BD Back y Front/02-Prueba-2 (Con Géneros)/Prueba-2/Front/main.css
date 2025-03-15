@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+}
+
+#peliculas{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    justify-content: center;
+}
+
+#peliculas li{      
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.peliculas img{
+    max-height: 350px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.peliculas h2 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Información de las películas */
+.peliculas p {
+    font-size: 16px;
+    color: #000000;
+    margin: 10px 0;
+}
+   

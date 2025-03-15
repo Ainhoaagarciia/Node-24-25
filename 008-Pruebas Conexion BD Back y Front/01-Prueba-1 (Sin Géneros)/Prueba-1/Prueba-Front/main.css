@@ -1,0 +1,49 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contenedor de la lista de películas */
+#peliculas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilo de cada película */
+#peliculas li {
+    background: #fff;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: left;
+}
+.peliculas img {
+    width: 100%; /* Se ajusta al ancho del contenedor */
+    max-height: 200px; /* Máxima altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 8px;
+    margin-bottom: 10px; /* Espacio entre la imagen y el título */
+}
+
+/* Títulos de las películas */
+.peliculas h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Información de las películas */
+.peliculas p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
